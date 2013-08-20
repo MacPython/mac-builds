@@ -1,0 +1,42 @@
+{
+    "settings" : {
+        "virtualenv": "%(HOMEDIR)s/gattai_env",
+        "uses_setuptools": "TRUE",
+        "include_dirs": ["%(HOMEDIR)s/gattai_env/include"],
+        "lib_dirs": ["%(HOMEDIR)s/gattai_env/lib"],
+        "darwin" : {
+            "archs": ["i386"],
+            "min-version": "10.6",
+            "env_vars": {
+                "CC": "gcc-4.0",
+                "CXX": "g++-4.0"
+            }
+        }
+        
+    },
+    "packages" : [
+        {
+            "name": "hdf5",
+            "version": "1.8.10",
+            "source": "http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.10-patch1/src/hdf5-1.8.10-patch1.tar.gz",
+            "source_dir": "hdf5-1.8.10-patch1"
+        },
+        {
+            "name": "netcdf",
+            "version": "4.2.1",
+            "configure_args": ["--enable-netcdf-4", "--with-hdf5=%(HOMEDIR)s/env/netcdf"],
+            "source": "http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-4.2.1.tar.gz"
+        },
+        {
+            "name": "netcdf4-python",
+            "version": "1.0.4",
+            "source_dir": "netCDF4-1.0.4",
+            "source": "http://netcdf4-python.googlecode.com/files/netCDF4-1.0.4.tar.gz",
+            "build_type": "python",
+            "env_vars": {
+                "HDF5_DIR": "%(HOMEDIR)s/gattai_env",
+                "NETCDF4_DIR": "%(HOMEDIR)s/gattai_env"
+            }
+        }
+    ]
+}
