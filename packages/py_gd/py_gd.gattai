@@ -1,9 +1,9 @@
 {
     "settings" : {
-        "virtualenv": "%(HOMEDIR)s/gattai_env",
+        "install_dir": "%(ROOTDIR)s/../DepsBuild/",
         "uses_setuptools": "TRUE",
-        "include_dirs": ["%(HOMEDIR)s/gattai_env/include"],
-        "lib_dirs": ["%(HOMEDIR)s/gattai_env/lib"],
+        "include_dirs": ["%(ROOTDIR)s/../DepsBuild/include"],
+        "lib_dirs": ["%(ROOTDIR)s/../DepsBuild/lib"],
         "darwin" : {
             "archs": ["i386"],
             "min-version": "10.6",
@@ -15,19 +15,29 @@
     },
     "packages" : [
         {
-            "name": "png",
+            "ignore": "TRUE",
+            "name": "libpng",
             "version": "1.6.3",
             "source": "http://sourceforge.net/projects/libpng/files/libpng16/1.6.3/libpng-1.6.3.tar.gz",
-            "source_dir": "libpng-1.6.3"
+            "source_dir": "libpng-1.6.3",
+            "configure_args": ["--disable-shared"]
         },
         {
+            "name": "libgd",
+            "version": "2.1.0",
+            "source": "https://bitbucket.org/libgd/gd-libgd/downloads/libgd-2.1.0.tar.gz",
+            "source_dir": "libgd-2.1.0",
+            "configure_args": ["--disable-shared", "--with-png=%(ROOTDIR)s/../DepsBuild/"]
+        },
+        {            
+            "ignore": "TRUE",
             "name": "py_gd",
             "version": "0.1.1",
-            "source_dir": "py_gd",
             "source": "https://github.com/NOAA-ORR-ERD/py_gd/archive/master.zip",
+            "source_dir": "py_gd-master",
             "build_type": "python",
             "env_vars": {
-                "DUMMY": "%(HOMEDIR)s/env/netcdf"
+                "LIBGD_LOCATION": "%(ROOTDIR)s/../DepsBuild/"
             }
         }
     ]
