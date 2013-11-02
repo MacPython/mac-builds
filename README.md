@@ -9,15 +9,15 @@ It is hoped that by putting this all in one place, anyone that needs to build a 
 Goals of this project
 ======================
 
-The primary goal of this project is not just to provide recipes for bulding pacakges, but to provide them to be build in a standard, re-disributable way. THe idea it to build packages in such a way as to have them be fully compatible with the python builds on python.org, so that anyone running a given python build can also run the packages resulting from this project, and re-distribute them successfuly with py2app, etc.
+The primary goal of this project is not just to provide recipes for bulding pacakges, but to provide a way for them to be built in a standard, re-distributable way. The idea is to build packages in such a way as to have them be fully compatible with the python builds on python.org, so that anyone running a given python build can also run the packages resulting from this project, and re-distribute them successfuly with py2app, etc.
 
 
 About Gattai
 =============
 
-Gattai is a python-based system for building python packages -- you might ask "is'nt that what distutils and setuptool sis for?" -- well, yes, but the complication comes in when there are non-python dependencies. Gattai is a system that allows you to provide a single recipe that will download, build and install the extenal dependencies, then build your python package against it.
+Gattai is a python-based system for building python packages -- you might ask "isn't that what distutils and setuptools are for?" -- well, yes, but the complication comes in when there are non-python dependencies. Gattai is a system that allows you to provide a single recipe that will download, build and install the external dependencies, then build your python package against it.
 
-It's not a requirment for this project to use Gattai, and indeed, when I started, I foudn myself writting custom scripts to do al this -- but I decided to stap re-inventing the wheel, and just go with gattai. You will find gattai on sourceforge, at:
+It's not a requirment for this project to use Gattai, and indeed, when I started, I found myself writting custom scripts to do all this -- but I decided to stap re-inventing the wheel, and just go with gattai. You will find gattai on sourceforge, at:
 
 <https://sourceforge.net/projects/gattai/>
 
