@@ -1,7 +1,7 @@
 mac-builds
 ==========
 
-This repository is a home for various recipes for building various python packages for the Mac.
+This repository is a home for various recipes for building assorted python packages for the Mac.
 
 It is hoped that by putting this all in one place, anyone that needs to build a python package for Mac OS-X can use (or adapt) one of these recipes, rather than having to figure it all out over and over again. 
 
