@@ -19,7 +19,10 @@
             "version": "1.8.11",
             "source": "http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.11/src/hdf5-1.8.11.tar.gz",
             "source_dir": "hdf5-1.8.11",
-            "configure_args": ["--disable-shared"]
+            "configure_args": ["--disable-shared"],
+            "linux2": {
+                "extra_cflags": ["-fPIC"]
+            }
         },
         {
             "name": "netcdf",
@@ -27,7 +30,10 @@
             "configure_args": ["--enable-netcdf-4", "--with-hdf5=%(ROOTDIR)s/../DepsBuild/"],
             "source": "ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.0.tar.gz",
             "source_dir": "netcdf-4.3.0",
-            "configure_args": ["--disable-shared"]
+            "configure_args": ["--disable-shared"],
+            "linux2": {
+                "extra_cflags": ["-fPIC"]
+            }
         },
         {
             "name": "netcdf4-python",
